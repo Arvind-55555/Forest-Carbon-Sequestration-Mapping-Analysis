@@ -1,8 +1,9 @@
 # Forest Carbon Sequestration Mapping & Analysis Platform
 
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-web%20%7C%20desktop-lightgrey)](#)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://python.org)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)](https://jupyter.org)
+[![Machine Learning](https://img.shields.io/badge/ML-Scikit--learn-green)](https://scikit-learn.org)
+[![Geospatial](https://img.shields.io/badge/Geospatial-GDAL%2FRasterio-brightgreen)](https://gdal.org)
 
 A comprehensive geospatial platform for estimating, mapping, and analyzing carbon storage and sequestration potential in forest ecosystems. This tool combines remote sensing, machine learning, and ecological modeling to support climate action and forest conservation.
 
@@ -10,17 +11,28 @@ A comprehensive geospatial platform for estimating, mapping, and analyzing carbo
 This project provides an end-to-end workflow for quantifying forest carbon dynamics using satellite imagery, field data, and advanced modeling techniques. The platform helps identify carbon-rich areas, assess conservation priorities, and model future scenarios to inform climate mitigation strategies.
 
 ### Key Features
-- Carbon stock estimation using MLP-Markov hybrid model (stubs provided)
-- Multi-temporal analysis (1995-2035+)
-- Scenario modeling for conservation planning
-- Interactive web dashboard (placeholder)
-- Economic valuation of carbon sequestration
-- Conservation priority mapping
+- **Carbon Stock Estimation** using MLP-Markov hybrid model
+- **Multi-temporal Analysis** (1995-2035+) for trend identification
+- **Scenario Modeling** for conservation and development planning
+- **Interactive Web Dashboard** for data visualization and exploration
+- **Economic Valuation** of carbon sequestration services
+- **Conservation Priority Mapping** to guide restoration efforts
+- **Geospatial Analytics** using satellite imagery and remote sensing data
+- **Machine Learning Pipelines** for predictive modeling
 
 ## 🚀 Live Demo
 
 [![View Artifact](https://img.shields.io/badge/View%20Artifact-%230077B5.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.ai/public/artifacts/b5af4862-4bae-4545-85ee-fa30f098781b)
 
+## Applications
+
+- Climate change mitigation planning
+- Forest conservation prioritization
+- Carbon credit project development
+- Environmental impact assessments
+- Sustainable land-use planning
+- Academic research in forest ecology
+  
 ## Quick Start
 
 ### Prerequisites
