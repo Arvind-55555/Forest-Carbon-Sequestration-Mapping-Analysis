@@ -99,7 +99,7 @@ If you use this software in research, please cite:
 }
 ```
 🙏 Acknowledgments
-* Based on research from "Forest carbon sequestration mapping and economic quantification" (Verma et al., 2024)
-* Inspired by Capture Map Norway
-* Supported by the Natural Capital Project and Stanford University
-* Field data contributions from Himalayan forest communities
+* Based on research from "Forest carbon sequestration mapping and economic quantification" (Verma et al., 2024).
+* Inspired by Capture Map Norway.
+* Supported by the Natural Capital Project and Stanford University.
+* Field data contributions from Himalayan forest communities.
