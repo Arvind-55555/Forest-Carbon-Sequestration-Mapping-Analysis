@@ -6,8 +6,6 @@
 
 A comprehensive geospatial platform for estimating, mapping, and analyzing carbon storage and sequestration potential in forest ecosystems. This tool combines remote sensing, machine learning, and ecological modeling to support climate action and forest conservation.
 
-> This repository and README were initialized from the project note you uploaded. fileciteturn0file0
-
 ## Overview
 This project provides an end-to-end workflow for quantifying forest carbon dynamics using satellite imagery, field data, and advanced modeling techniques. The platform helps identify carbon-rich areas, assess conservation priorities, and model future scenarios to inform climate mitigation strategies.
 
