@@ -1,0 +1,209 @@
+Forest Carbon Sequestration Mapping & Analysis Platform
+https://img.shields.io/badge/python-3.8%252B-blue
+https://img.shields.io/badge/license-MIT-green
+https://img.shields.io/badge/platform-web%2520%257C%2520desktop-lightgrey
+
+A comprehensive geospatial platform for estimating, mapping, and analyzing carbon storage and sequestration potential in forest ecosystems. This tool combines remote sensing, machine learning, and ecological modeling to support climate action and forest conservation.
+
+🌳 Overview
+This project develops an end-to-end workflow for quantifying forest carbon dynamics using satellite imagery, field data, and advanced modeling techniques. The platform helps identify carbon-rich areas, assess conservation priorities, and model future scenarios to inform climate mitigation strategies.
+
+Key Features:
+
+Carbon stock estimation using MLPnn-Markov chain hybrid models
+
+Multi-temporal analysis (1995-2035+)
+
+Scenario modeling for conservation planning
+
+Interactive web dashboard for visualization
+
+Economic valuation of carbon sequestration
+
+Conservation priority mapping
+
+🚀 Quick Start
+Prerequisites
+Python 3.8 or higher
+
+Google Earth Engine account
+
+QGIS 3.16+ (optional, for spatial analysis)
+
+Modern web browser
+
+Installation
+Clone the repository
+
+bash
+git clone https://github.com/your-username/forest-carbon-mapping.git
+cd forest-carbon-mapping
+Set up Python environment
+
+bash
+# Using conda
+conda env create -f environment.yml
+conda activate carbon-mapping
+
+# Or using pip
+pip install -r requirements.txt
+Configure environment variables
+
+bash
+cp .env.example .env
+# Edit .env with your API keys and paths
+Initialize data directories
+
+bash
+python scripts/setup_directories.py
+Run the application
+
+bash
+# Development server
+python app.py
+
+# Or launch Jupyter notebook for analysis
+jupyter notebook notebooks/01_data_processing.ipynb
+📁 Project Structure
+text
+forest-carbon-mapping/
+├── data/
+│   ├── raw/                 # Raw satellite imagery
+│   ├── processed/           # Processed geospatial data
+│   ├── outputs/             # Model results and maps
+│   └── field_measurements/  # Ground truth data
+├── src/
+│   ├── data_processing/     # Data ingestion and preprocessing
+│   ├── modeling/            # ML and statistical models
+│   ├── visualization/       # Mapping and plotting utilities
+│   └── api/                 # Web API endpoints
+├── notebooks/               # Jupyter notebooks for analysis
+├── tests/                   # Unit and integration tests
+├── docs/                    # Documentation
+└── dashboard/               # Web dashboard application
+🛠️ Core Components
+1. Data Processing Pipeline
+python
+from src.data_processing.satellite_loader import LandsatLoader
+from src.data_processing.preprocessing import ImageProcessor
+
+# Load and preprocess satellite data
+loader = LandsatLoader()
+processor = ImageProcessor()
+cleaned_data = processor.atmospheric_correction(loader.load_images())
+2. Carbon Estimation Models
+python
+from src.modeling.mlp_markov import MLPMarkovModel
+from src.modeling.invest_integration import InVESTWrapper
+
+# Initialize hybrid model
+model = MLPMarkovModel()
+carbon_stocks = model.predict(landcover_data, biomass_params)
+3. Scenario Analysis
+python
+from src.modeling.scenarios import ScenarioAnalyzer
+
+# Compare different futures
+scenarios = ScenarioAnalyzer()
+results = scenarios.compare([
+    'business_as_usual',
+    'conservation', 
+    'afforestation'
+])
+📊 Usage Examples
+Basic Carbon Mapping
+python
+import forestcarbon as fc
+
+# Load study area
+study_area = fc.load_geojson('data/study_area.geojson')
+
+# Estimate carbon stocks
+carbon_map = fc.estimate_carbon_stocks(
+    landcover='data/landcover_2020.tif',
+    biomass_params='data/biomass_coefficients.csv'
+)
+
+# Generate visualization
+fc.plot_carbon_map(carbon_map, study_area)
+Scenario Modeling
+python
+# Model future scenarios
+scenarios = {
+    '2030_bau': fc.project_business_as_usual(),
+    '2030_conservation': fc.project_conservation_scenario(),
+    '2030_afforestation': fc.project_afforestation()
+}
+
+# Compare results
+comparison = fc.compare_scenarios(scenarios)
+fc.generate_scenario_report(comparison)
+Web Dashboard
+bash
+# Launch interactive dashboard
+cd dashboard
+npm install
+npm start
+# Visit http://localhost:3000
+📈 Data Sources
+Data Type	Source	Resolution	Frequency
+Optical Imagery	Landsat 8/9, Sentinel-2	10-30m	5-16 days
+Radar Data	Sentinel-1, ALOS PALSAR	10-25m	6-42 days
+Elevation	SRTM, ALOS DEM	30m	Static
+Forest Inventory	FSI, GFW	Plot-level	Annual
+Climate Data	WorldClim, CHIRPS	1km	Monthly
+🎯 Key Outputs
+Carbon Stock Maps (Mg C/ha)
+
+Sequestration Rate Maps (Mg C/ha/yr)
+
+Conservation Priority Zones
+
+Economic Valuation Reports (USD)
+
+Scenario Comparison Dashboards
+
+Climate Action Recommendations
+
+🔧 Configuration
+Edit config/settings.yaml to customize:
+
+yaml
+model_parameters:
+  carbon_pools:
+    above_ground: 0.47
+    below_ground: 0.23
+    soil_organic: 0.27
+    dead_matter: 0.03
+  
+  economic_parameters:
+    carbon_price: 86  # USD/t CO2
+    discount_rate: 0.03
+
+regions:
+  default: 
+    bounds: [lat_min, lon_min, lat_max, lon_max]
+    projection: "EPSG:4326"
+🤝 Contributing
+We welcome contributions! Please see our Contributing Guidelines for details.
+
+Fork the repository
+
+Create a feature branch (git checkout -b feature/amazing-feature)
+
+Commit your changes (git commit -m 'Add amazing feature')
+
+Push to the branch (git push origin feature/amazing-feature)
+
+Open a Pull Request
+
+📄 Citation
+If you use this software in your research, please cite:
+
+bibtex
+@software{forest_carbon_mapping_2024,
+  title = {Forest Carbon Sequestration Mapping Platform},
+  author = {Your Name and Contributors},
+  year = {2024},
+  url = {https://github.com/your-username/forest-carbon-mapping}
+}

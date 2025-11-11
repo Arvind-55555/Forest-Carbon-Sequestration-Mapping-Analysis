@@ -1,0 +1,14 @@
+model_parameters:
+  carbon_pools:
+    above_ground: 0.47
+    below_ground: 0.23
+    soil_organic: 0.27
+    dead_matter: 0.03
+
+  economic_parameters:
+    carbon_price: 86  # USD/t CO2
+    discount_rate: 0.03
+regions:
+  default:
+    bounds: [lat_min, lon_min, lat_max, lon_max]
+    projection: "EPSG:4326"
