@@ -86,13 +86,6 @@ forest-carbon-mapping/
 └── README.md
 ```
 
-## Example usage (Python API)
-```python
-from src import api, modelling, data_processing
-
-# Load study area
-# (stubs provided in src/)
-```
 
 ## Configuration
 Edit `config/settings.yaml` to customize model and economic parameters (a sample is included).
